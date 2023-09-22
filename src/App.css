@@ -1,0 +1,31 @@
+body {
+    background-color: #8d8d8d;
+    font-family: Impact, fantasy;
+}
+
+#drum-machine {
+    width: 500px;
+}
+
+.overflow-hidden {
+    background-color: #b3b3b3;
+}
+
+.pad-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.pad-container.active {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);/* Alinha os pads em uma única linha e distribui o espaço disponível */
+    justify-content: space-between;
+}
+
+.pad-container.disable {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);/* Alinha os pads em uma única linha e distribui o espaço disponível */
+    justify-content: space-between;
+}

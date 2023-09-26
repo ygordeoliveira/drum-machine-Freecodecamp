@@ -12,7 +12,7 @@ class DrumPad extends Component {
     }
 
     componentWillUnmount() {
-      document.removeEventListener('keydown', this.handleKeyPress);
+        document.removeEventListener('keydown', this.handleKeyPress);
     }
 
     handleKeyPress = (event) => {
@@ -38,11 +38,11 @@ class DrumPad extends Component {
     render() {
         return (
             <button
-              className={`drum-pad btn btn-secondary m-2 mt-4 text-dark ${this.props.power ? 'active' : ''}`}
-              onClick={this.playSound}
-              >
-              {this.props.keyTrigger}
-              <audio ref={this.audioRef} src={this.props.audioSrc}/>
+                className={`drum-pad btn btn-secondary p-3 m-3 mt-4 text-dark ${this.props.power ? 'active' : ''}`}
+                onClick={this.playSound}
+            >
+                {this.props.keyTrigger}
+                <audio ref={this.audioRef} src={this.props.audioSrc}/>
             </button>
         );
     }
@@ -64,7 +64,7 @@ class App extends React.Component {
             display: ''
         }));
     };
-  
+
     handleTurnOff = () => {
         this.setState({
             power: false,
@@ -111,17 +111,17 @@ class App extends React.Component {
                 <div className="col-md-6 offset-md-2">
                     <div className="controls m-3">
                         {this.state.power ? (
-                            <button className={`btn btn-danger`} onClick={this.handleTurnOff}>
+                            <button className={`btn btn-danger mt-3`} onClick={this.handleTurnOff}>
                                 Desligar
                             </button>
                         ) : (
-                            <button className={`btn btn-success ms-5 mt-5`} onClick={this.handlePowerToggle}>
+                            <button className={`btn btn-success`} onClick={this.handlePowerToggle}>
                                 Ligar
                             </button>
                         )}
                         {this.state.power && (
                             <div className="volume-control mt-4">
-                                <label>Volume</label>
+                                <label class="fs-4">Volume</label>
                                 <input
                                     className="m-2"
                                     type="range"
@@ -135,11 +135,10 @@ class App extends React.Component {
                                 />
                                 <br/>
                                 <br/>
-                                <p>Volume: {this.state.volume}</p>
+                                <p class="volume fs-4">Volume: {this.state.volume}</p>
                             </div>
                         )}
-                        <br/>
-                        <div className="display bg-secondary ps-2 text-center">
+                        <div className="display bg-secondary w-75 text-center">
                             <p>{this.state.display}</p>
                         </div>
                     </div>
